@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    text-align: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 20px 0;
+}
+
+h1 {
+    color: #333;
+}
+
+.table-container {
+    margin: 20px 0;
+}
+
+.team-table {
+    margin-top: 10px;
+}
+
+.team {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #f9f9f9;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rank {
+    font-weight: bold;
+    color: #666;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.points {
+    color: #333;
+}
