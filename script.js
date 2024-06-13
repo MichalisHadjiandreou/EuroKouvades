@@ -6,27 +6,111 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Simulated data for different groups, in real application you would fetch this data from an API
     const dataBestTeam = [
-        { name: 'France', points: 15 },
-        { name: 'Germany', points: 12 },
-        { name: 'Italy', points: 10 }
+        { name: 'Germany', points: 15 },
+        { name: 'Scotland', points: 12 },
+        { name: 'Hungary', points: 12 },
+        { name: 'Switzerland', points: 12 },
+        { name: 'Slovenia', points: 12 },
+        { name: 'Denmark', points: 12 },
+        { name: 'Serbia', points: 12 },
+        { name: 'England', points: 12 },
+        { name: 'Belgium', points: 12 },
+        { name: 'Slovakia', points: 12 },
+        { name: 'Romania', points: 12 },
+        { name: 'Ukraine', points: 12 },
+        { name: 'Spain', points: 12 },
+        { name: 'Croatia', points: 12 },
+        { name: 'Italy', points: 12 },
+        { name: 'Albania', points: 12 },
+        { name: 'Poland', points: 12 },
+        { name: 'Netherlands', points: 12 },
+        { name: 'Austria', points: 12 },
+        { name: 'France', points: 12 },
+        { name: 'Turkey', points: 12 },
+        { name: 'Georgia', points: 12 },
+        { name: 'Portugal', points: 12 },
+        { name: 'Czechia', points: 10 }
     ];
 
     const dataWorstTeam = [
-        { name: 'Spain', points: 9 },
-        { name: 'Belgium', points: 7 },
-        { name: 'Portugal', points: 6 }
+        { name: 'Germany', points: 15 },
+        { name: 'Scotland', points: 12 },
+        { name: 'Hungary', points: 12 },
+        { name: 'Switzerland', points: 12 },
+        { name: 'Slovenia', points: 12 },
+        { name: 'Denmark', points: 12 },
+        { name: 'Serbia', points: 12 },
+        { name: 'England', points: 12 },
+        { name: 'Belgium', points: 12 },
+        { name: 'Slovakia', points: 12 },
+        { name: 'Romania', points: 12 },
+        { name: 'Ukraine', points: 12 },
+        { name: 'Spain', points: 12 },
+        { name: 'Croatia', points: 12 },
+        { name: 'Italy', points: 12 },
+        { name: 'Albania', points: 12 },
+        { name: 'Poland', points: 12 },
+        { name: 'Netherlands', points: 12 },
+        { name: 'Austria', points: 12 },
+        { name: 'France', points: 12 },
+        { name: 'Turkey', points: 12 },
+        { name: 'Georgia', points: 12 },
+        { name: 'Portugal', points: 12 },
+        { name: 'Czechia', points: 10 }
     ];
 
     const dataMostReds = [
-        { name: 'Spain', points: 9 },
-        { name: 'Belgium', points: 7 },
-        { name: 'Portugal', points: 6 }
+        { name: 'Germany', points: 15 },
+        { name: 'Scotland', points: 12 },
+        { name: 'Hungary', points: 12 },
+        { name: 'Switzerland', points: 12 },
+        { name: 'Slovenia', points: 12 },
+        { name: 'Denmark', points: 12 },
+        { name: 'Serbia', points: 12 },
+        { name: 'England', points: 12 },
+        { name: 'Belgium', points: 12 },
+        { name: 'Slovakia', points: 12 },
+        { name: 'Romania', points: 12 },
+        { name: 'Ukraine', points: 12 },
+        { name: 'Spain', points: 12 },
+        { name: 'Croatia', points: 12 },
+        { name: 'Italy', points: 12 },
+        { name: 'Albania', points: 12 },
+        { name: 'Poland', points: 12 },
+        { name: 'Netherlands', points: 12 },
+        { name: 'Austria', points: 12 },
+        { name: 'France', points: 12 },
+        { name: 'Turkey', points: 12 },
+        { name: 'Georgia', points: 12 },
+        { name: 'Portugal', points: 12 },
+        { name: 'Czechia', points: 10 }
     ];
 
     const dataTopScorer = [
-        { name: 'Spain', points: 9 },
-        { name: 'Belgium', points: 7 },
-        { name: 'Portugal', points: 6 }
+        { name: 'Germany', points: 15 },
+        { name: 'Scotland', points: 12 },
+        { name: 'Hungary', points: 12 },
+        { name: 'Switzerland', points: 12 },
+        { name: 'Slovenia', points: 12 },
+        { name: 'Denmark', points: 12 },
+        { name: 'Serbia', points: 12 },
+        { name: 'England', points: 12 },
+        { name: 'Belgium', points: 12 },
+        { name: 'Slovakia', points: 12 },
+        { name: 'Romania', points: 12 },
+        { name: 'Ukraine', points: 12 },
+        { name: 'Spain', points: 12 },
+        { name: 'Croatia', points: 12 },
+        { name: 'Italy', points: 12 },
+        { name: 'Albania', points: 12 },
+        { name: 'Poland', points: 12 },
+        { name: 'Netherlands', points: 12 },
+        { name: 'Austria', points: 12 },
+        { name: 'France', points: 12 },
+        { name: 'Turkey', points: 12 },
+        { name: 'Georgia', points: 12 },
+        { name: 'Portugal', points: 12 },
+        { name: 'Czechia', points: 20 }
     ];
 
     function updateTeams(group, container) {
