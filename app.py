@@ -182,7 +182,7 @@ def get_worstteam(api_key, league_id, season):
                 elif team_goalDiff == least_goaldiff:
                     least_points = team_points
                     least_goaldiff = team_goalDiff
-                    top_worst_teams.append({'name':+ " (" + participant_team_mappings[team_name.lower()] +")", 'points': str(team_points) + " pts/" + str(team_goalDiff) + " GD"})
+                    top_worst_teams.append({'name':team_name+ " (" + participant_team_mappings[team_name.lower()] +")", 'points': str(team_points) + " pts/" + str(team_goalDiff) + " GD"})
                 else:
                     pass
             else:
