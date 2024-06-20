@@ -63,6 +63,12 @@ def dataWorstTeam():
     worst_team = get_worstteam(api_key, 4, 2024)
     return worst_team
 
+# Next match
+@app.route('/dataNextMatch')
+def dataNextMatch():
+    next_match = get_nextmatch(api_key, 4, 2024)
+    return next_match
+
 # Internal method for getting top scorer
 def get_top_scorers(api_key, league_id, season):
     base_url = "https://api-football-v1.p.rapidapi.com/v3/"
@@ -188,6 +194,38 @@ def get_worstteam(api_key, league_id, season):
             else:
                 pass
     return top_worst_teams
+
+#internal method for getting next match
+def get_nextmatch(api_key, league_id, season):
+    base_url = "https://api-football-v1.p.rapidapi.com/v3/"
+    headers = {
+        'x-rapidapi-key': api_key,
+        'x-rapidapi-host': "api-football-v1.p.rapidapi.com"
+    }
+    
+    # URL to get the next match
+    next_match_url = f"{base_url}fixtures"
+    params = {
+        'league': league_id,
+        'season': season,
+        'next': 1
+    }
+    
+    response = requests.get(next_match_url, headers=headers, params=params)
+    data = response.json()
+
+    
+    if response.status_code != 200 or not data['response']:
+        print("Error fetching top scorers data.")
+        return None
+    
+    next_home = ''
+    next_away = ''
+
+    next_home = data['response'][0]['teams']['home']['name']
+    next_away = data['response'][0]['teams']['away']['name']
+
+    return [{'name': next_home + " (" + participant_team_mappings[next_home.lower()] +")  Vs " + next_away + " (" + participant_team_mappings[next_away.lower()] +")"}]
 
 if __name__ == '__main__':
     
