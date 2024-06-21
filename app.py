@@ -5,6 +5,8 @@ import os
 import requests
 import ast
 import requests_cache
+import threading
+import time
 
 # Cache the responses for the next hour
 requests_cache.install_cache('football_api_cache', backend='sqlite', expire_after=3600)  # Cache expires after 1 hour
@@ -43,6 +45,10 @@ def dataBestTeam():
     
     return final_data
 
+@app.route('/health')
+def health():
+    return 'OK', 200
+    
 # Top scorer
 @app.route('/dataTopScorer')
 def dataTopScorer():
@@ -227,6 +233,19 @@ def get_nextmatch(api_key, league_id, season):
 
     return [{'name': next_home + " (" + participant_team_mappings[next_home.lower()] +")  Vs " + next_away + " (" + participant_team_mappings[next_away.lower()] +")"}]
 
+#keep alive
+def keep_alive():
+    while True:
+        try:
+            response = requests.get("http://localhost:5000/health")
+            if response.status_code == 200:
+                print("Service is healthy.")
+            else:
+                print("Service is unhealthy. Status code:", response.status_code)
+        except requests.exceptions.RequestException as e:
+            print("Failed to connect to service:", e)
+        time.sleep(300)  # Ping every 5 minutes
+
 if __name__ == '__main__':
     
     api_key = os.getenv('FOOTBALL_API_KEY')
@@ -236,4 +255,9 @@ if __name__ == '__main__':
 
     #app.run(debug=True)
     port = int(os.environ.get('PORT', 5000))
+
+    #separate thread
+    threading.Thread(target=keep_alive, daemon=True).start()
+
+    # start 
     app.run(host='0.0.0.0', port=port)
